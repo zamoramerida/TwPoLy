@@ -1,8 +1,36 @@
 <html>
+<SCRIPT language="javascript">
+function add(type) {
+ 
+    //Create an input type dynamically.
+    var element = document.createElement("input");
+    var br = document.createElement("br");
+ 
+    //Assign different attributes to the element.
+    element.setAttribute("type", type);
+    element.setAttribute("value", type);
+    element.setAttribute("name", type);
+ 
+ 
+    var foo = document.getElementById("fooBar");
+ 
+    //Append the element in page (in span).
+    foo.appendChild(element);
+    foo.appendChild(br);
+ 
+}
+</SCRIPT>
 <body>
   <form action="/" method="post">
     Name: <input type="text" name="name"/>
     <input type="submit" value="Submit"/>
-  </form>
+    <br><P>
+    <span>
+    <SELECT name="element">
+    <OPTION value="text">Option</OPTION>
+    </SELECT>
+    <INPUT type="button" value="Add" onclick="add(document.forms[0].element.value)"/><br/>
+    <span id="fooBar"></span>
+  </form><br>
 </body>
 </html>
